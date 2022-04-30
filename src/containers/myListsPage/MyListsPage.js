@@ -56,7 +56,7 @@ export const MyListsPage = ({ lists, addList, deleteList, editList }) => {
         {listIsEmpty
         ? <p>You don't have any lists! Add one above.</p>
         : 
-        <TileList tiles={lists} isList={true} handleDelete={handleDelete} handleEdit={handleEdit} filter='All'/>
+        <TileList tiles={lists} listTitle={title} isList={true} handleDelete={handleDelete} handleEdit={handleEdit} filter='All'/>
         }
     </div>
   );

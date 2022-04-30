@@ -2,7 +2,7 @@ import React from 'react';
 import { Tile } from '../tile/Tile';
 
 
-export const TileList = ( { tiles, isList, handleDelete, handleEdit, filter } ) => {
+export const TileList = ( { tiles, isList, handleDelete, handleEdit, reSort, filter } ) => {
 
   return (
     <ul>
@@ -15,6 +15,7 @@ export const TileList = ( { tiles, isList, handleDelete, handleEdit, filter } ) 
             isList={isList}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+            reSort={reSort}
             filter={filter}
             />
         ))}

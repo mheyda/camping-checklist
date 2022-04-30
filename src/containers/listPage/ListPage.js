@@ -16,7 +16,7 @@ export const ListPage = ({ lists, addItem, deleteItem, editItem, sortItems }) =>
     // Set state variables for new item title
     const [title, setTitle] = useState('');
     const [filter, setFilter] = useState('All');
-    const [sort, setSort] = useState('Alphabetical');
+    const [sort, setSort] = useState('Checked');
     const [listIsEmpty, setListIsEmpty] = useState(lists[listIndex].items.length === 0);
 
     // Add item to a list
@@ -46,6 +46,11 @@ export const ListPage = ({ lists, addItem, deleteItem, editItem, sortItems }) =>
         const indexOfItem = e.target.dataset.index;
         const newName = e.target.dataset.title;
         editItem(indexOfItem, listTitle, newName);
+        sortItems(listTitle, sort);
+    }
+
+    // Re-sort items
+    const reSort = () => {
         sortItems(listTitle, sort);
     }
 
@@ -82,7 +87,7 @@ export const ListPage = ({ lists, addItem, deleteItem, editItem, sortItems }) =>
             </div>
         </>
         }
-        <TileList tiles={lists[listIndex].items} isList={false} handleDelete={handleDelete} handleEdit={handleEdit} filter={filter} />
+        <TileList tiles={lists[listIndex].items} isList={false} handleDelete={handleDelete} handleEdit={handleEdit} reSort={reSort} filter={filter} />
     </div>
   );
 };

@@ -11,71 +11,131 @@ function App() {
   const [lists, setLists] = useState([
     // Add default lists
     {
-      title: 'First List',
+      title: "App Functionality",
       items: [
         {
-          title: 'grill',
+          title: 'This app can do the following...',
           checked: false,
-          dateAdded: new Date('2015'),
+          dateAdded: new Date(),
           lastEdited: new Date()
         },
         {
-          title: 'tent',
+          title: 'Create and delete lists and items',
           checked: false,
-          dateAdded: new Date('2017'),
+          dateAdded: new Date(),
           lastEdited: new Date()
         },
         {
-          title: 'water',
+          title: 'Edit list and item titles',
           checked: false,
-          dateAdded: new Date('2016'),
+          dateAdded: new Date(),
+          lastEdited: new Date()
+        },
+        {
+          title: 'Check off items',
+          checked: false,
+          dateAdded: new Date(),
+          lastEdited: new Date()
+        },
+        {
+          title: 'Sort and filter items in multiple ways',
+          checked: false,
+          dateAdded: new Date(),
           lastEdited: new Date()
         }
       ]
     },
     {
-      title: 'Second List',
+      title: "Marshall's To-Learn List",
       items: [
         {
-          title: 'backpack',
-          checked: false,
-          dateAdded: Date(),
-          lastEdited: Date()
+          title: 'React',
+          checked: true,
+          dateAdded: new Date(2022, 3, 1),
+          lastEdited: new Date()
         },
         {
-          title: 'rain jacket',
-          checked: false,
-          dateAdded: Date(),
-          lastEdited: Date()
+          title: 'Redux',
+          checked: true,
+          dateAdded: new Date(2022, 4, 1),
+          lastEdited: new Date()
         },
         {
-          title: 'camera',
+          title: 'TypeScript',
           checked: false,
-          dateAdded: Date(),
-          lastEdited: Date()
+          dateAdded: new Date(3000, 0, 1),
+          lastEdited: new Date()
+        },
+        {
+          title: 'Node.js',
+          checked: false,
+          dateAdded: new Date(3000, 0, 1),
+          lastEdited: new Date()
+        },
+        {
+          title: 'JavaScript',
+          checked: true,
+          dateAdded: new Date(2022, 0, 10),
+          lastEdited: new Date()
+        },
+        {
+          title: 'HTML',
+          checked: true,
+          dateAdded: new Date(2021, 9, 1),
+          lastEdited: new Date()
+        },
+        {
+          title: 'CSS',
+          checked: true,
+          dateAdded: new Date(2021, 9, 2),
+          lastEdited: new Date()
+        },
+        {
+          title: 'Bootstrap',
+          checked: true,
+          dateAdded: new Date(2021, 9, 20),
+          lastEdited: new Date()
         }
       ]
     },
     {
-      title: 'Third List',
+      title: 'Why Marshall Deserves an Interview',
       items: [
         {
-          title: 'phone',
-          checked: false,
-          dateAdded: Date(),
-          lastEdited: Date()
+          title: 'Because he is...',
+          checked: true,
+          dateAdded: new Date(),
+          lastEdited: new Date()
         },
         {
-          title: 'sunglasses',
-          checked: false,
-          dateAdded: Date(),
-          lastEdited: Date()
+          title: 'a quick learner,',
+          checked: true,
+          dateAdded: new Date(),
+          lastEdited: new Date()
         },
         {
-          title: 'cup',
-          checked: false,
-          dateAdded: Date(),
-          lastEdited: Date()
+          title: 'a great communicator,',
+          checked: true,
+          dateAdded: new Date(),
+          lastEdited: new Date()
+        },
+        {
+          title: 'self-motivated,',
+          checked: true,
+          dateAdded: new Date(),
+          lastEdited: new Date()
+        },
+        {
+          title: 'a natural problem solver,',
+          checked: true,
+          dateAdded: new Date(),
+          lastEdited: new Date()
+        },
+        {
+          title: 'and team-oriented! (:',
+          checked: true,
+          dateAdded: new Date(),
+          lastEdited: new Date()
         }
       ]
     }
@@ -121,6 +181,12 @@ function App() {
     let newItems;
 
     switch(sort) {
+      case 'Checked':
+        newItems = newList.items.sort((a, b) => Number(b.checked) - Number(a.checked));
+        break;
+      case 'Unchecked':
+        newItems = newList.items.sort((a, b) => Number(a.checked) - Number(b.checked));
+        break;
       case 'Alphabetical':
         newItems = newList.items.sort((a, b) => a.title.localeCompare(b.title));
         break;
@@ -138,7 +204,7 @@ function App() {
         break;
       default: 
     }
-    newList.items = newItems
+    newList.items = newItems;
     setLists(() => [...newLists, newList].sort((a, b) => a.title.localeCompare(b.title)));
   }
 

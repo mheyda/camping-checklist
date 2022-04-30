@@ -2,13 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 
-export const Tile = ({ tile, tiles, index, isList, handleDelete, handleEdit, filter }) => {
+export const Tile = ({ 
+  tile, 
+  tiles, 
+  index, 
+  isList, 
+  handleDelete, 
+  handleEdit,
+  reSort,
+  filter }) => {
   
   const [checked, setChecked] = useState(tile.checked);
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(tile.title);
 
-  const toggleCheckbox = () => checked ? setChecked(tile.checked = false) : setChecked(tile.checked = true);
+  const toggleCheckbox = () => {
+    checked ? setChecked(tile.checked = false) : setChecked(tile.checked = true);
+    reSort();
+  }
 
   // Only show items according to filter ('All', 'Checked', or 'Unchecked')
   let display = false;
@@ -22,6 +33,7 @@ export const Tile = ({ tile, tiles, index, isList, handleDelete, handleEdit, fil
     setNewTitle(tile.title);
     setChecked(tile.checked);
   }, [tiles, tile])
+
 
   if (display) {
     return (
