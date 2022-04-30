@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 
 import { MyListsPage } from './containers/myListsPage/MyListsPage';
@@ -143,7 +143,6 @@ function App() {
   }
 
   const ROUTES = {
-    HOME: '/my-lists/',
     LIST: '/my-lists/:id'
   };
 
@@ -159,8 +158,7 @@ function App() {
       
       <main>
         <Routes>
-          <Route path="/" element={<Navigate to={ROUTES.HOME} />}></Route>
-          <Route path={ROUTES.HOME} element={<MyListsPage lists={lists} addList={addList} deleteList={deleteList} editList={editList} />} />
+          <Route path='/' element={<MyListsPage lists={lists} addList={addList} deleteList={deleteList} editList={editList} />} />
           <Route path={ROUTES.LIST} element={<ListPage lists={lists} addItem={addItem} deleteItem={deleteItem} editItem={editItem} sortItems={sortItems} />} />
         </Routes>
       </main>

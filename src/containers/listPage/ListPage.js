@@ -65,7 +65,7 @@ export const ListPage = ({ lists, addItem, deleteItem, editItem, sortItems }) =>
 
   return (
     <div style={{position: 'relative'}}>
-        <Link className='btnBack' to='/my-lists/'>Back</Link>
+        <Link className='btnBack' to='/'>Back</Link>
         <h1>{listTitle}</h1>
         {listIsEmpty
         ?

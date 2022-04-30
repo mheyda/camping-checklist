@@ -39,7 +39,7 @@ export const Tile = ({ tile, tiles, index, isList, handleDelete, handleEdit, fil
         <div className='listItemContainer'>
           {isList
           ?
-          <Link className='linkBox' to={`${tile.title}|${index}`}>{tile.title}</Link>
+          <Link className='linkBox' to={`/my-lists/${tile.title}|${index}`}>{tile.title}</Link>
           :
           <label className='checkBox'>
             <input type="checkbox" value={tile.title} checked={checked} id={index} onChange={toggleCheckbox} />
