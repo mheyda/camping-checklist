@@ -143,7 +143,7 @@ function App() {
   }
 
   const ROUTES = {
-    HOME: '/my-lists',
+    HOME: '/my-lists/',
     LIST: '/my-lists/:id'
   };
 
