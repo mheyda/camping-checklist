@@ -47,7 +47,7 @@ export const Tile = ({ tile, tiles, index, isList, handleDelete, handleEdit, fil
           </label>
           }
           <button className='itemActionButton btnSecondary' onClick={() => setEditing(true)}>Edit<i className="fa-solid fa-pen"></i></button>
-          <button className='itemActionButton btnDanger' id={index} onClick={handleDelete}>Delete<i className="fa-solid fa-trash"></i></button>
+          <button className='itemActionButton btnDanger' data-index={index} onClick={handleDelete}>Delete<i data-index={index} className="fa-solid fa-trash"></i></button>
         </div>
         }
       </li>

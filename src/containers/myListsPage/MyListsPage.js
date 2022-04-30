@@ -28,7 +28,7 @@ export const MyListsPage = ({ lists, addList, deleteList, editList }) => {
 
   // Delete list from My Lists page
   const handleDelete = (e) => {
-    const indexOfList = e.target.id;
+    const indexOfList = e.target.dataset.index;
     deleteList(indexOfList);
   }
 

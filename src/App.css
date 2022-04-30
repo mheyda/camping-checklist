@@ -20,11 +20,17 @@ body {
 main {
   background-color: white;
   text-align: center;
-  padding: 2rem 2rem;
+  padding: 2rem 1rem 3rem 1rem;
   max-width: 600px;
   box-sizing: border-box;
   margin: 0 auto;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
+}
+
+@media (min-width: 576px) {
+  main {
+    padding: 2rem 2rem 3rem 2rem;
+  }
 }
 
 ul {
@@ -35,6 +41,7 @@ ul {
 
 h1 {
   margin-top: 0;
+  padding-top: 1.5rem;
   font-weight: 500;
 }
 
@@ -52,25 +59,52 @@ select {
   cursor: pointer;
   height: 2rem;
   padding-left: 5px;
+  font-size: 1rem;
 }
 
 .filterAndSort {
-  display: flex;
   padding: 2.5rem 0 0.5rem 0;
+  text-align: left;
 }
+
 .sort {
   margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  .filterAndSort {
+    display: flex;
+    padding: 2.5rem 0 0.5rem 0;
+  }
+  .sort {
+    margin-bottom: 0;
+  }
 }
 
 
 /* Containers */
 .listItemContainer {
+  display: block;
   border-bottom: 2px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 2rem;
-  padding: 1.5rem 0 0.5rem 0;
+  padding-top: 1rem;
+}
+
+.listItemContainer button:last-child {
+  margin-left: 4%;
+}
+
+@media (min-width: 576px) {
+  .listItemContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    padding: 1.5rem 0 0.5rem 0;
+  }
+  .listItemContainer button:last-child {
+    margin-left: 0;
+  }
 }
 
 
@@ -86,8 +120,18 @@ a:visited {
   color: #1a73e8;
 }
 .linkBox {
-  text-align: left;
-  width: 50%;
+  display: block;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  .linkBox {
+    width: 50%;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+  }
 }
 
 
@@ -103,6 +147,7 @@ input[type='submit'] {
   background-color: var(--neutralDark);
   height: 2rem;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 .btnPrimary {
@@ -139,8 +184,15 @@ input[type='submit'] {
 }
 
 .itemActionButton {
-  width: 22%;
+  width: 48%;
   border: 1px solid black;
+  margin-bottom: 1rem;
+}
+@media (min-width: 576px) {
+  .itemActionButton {
+    width: 22%;
+    margin-bottom: 0;
+  }
 }
 
 .newEntrySubmit {
@@ -155,6 +207,7 @@ input[type='text'] {
   box-sizing: border-box;
   height: 2rem;
   padding-left: 0.5rem;
+  font-size: 1rem;
 }
 
 .newEntry {
@@ -163,7 +216,15 @@ input[type='text'] {
 }
 
 .editBox {
-  width: 50%;
+  width: 100%;
+  margin: 0.85rem 0;
+}
+
+@media (min-width: 576px) {
+  .editBox {
+    width: 50%;
+    margin: 0;
+  }
 }
 
 

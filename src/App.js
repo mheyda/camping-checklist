@@ -159,7 +159,7 @@ function App() {
       
       <main>
         <Routes>
-          <Route exact path="/" element={<Navigate to={ROUTES.HOME} />}></Route>
+          <Route path="/" element={<Navigate to={ROUTES.HOME} />}></Route>
           <Route path={ROUTES.HOME} element={<MyListsPage lists={lists} addList={addList} deleteList={deleteList} editList={editList} />} />
           <Route path={ROUTES.LIST} element={<ListPage lists={lists} addItem={addItem} deleteItem={deleteItem} editItem={editItem} sortItems={sortItems} />} />
         </Routes>

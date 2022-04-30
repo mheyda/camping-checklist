@@ -35,7 +35,7 @@ export const ListPage = ({ lists, addItem, deleteItem, editItem, sortItems }) =>
 
     // Delete item in a list
     const handleDelete = (e) => {
-        const indexOfItem = e.target.id;
+        const indexOfItem = e.target.dataset.index;
         deleteItem(indexOfItem, listTitle);
         sortItems(listTitle, sort);
     }
